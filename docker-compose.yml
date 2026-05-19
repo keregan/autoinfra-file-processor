@@ -1,0 +1,16 @@
+services:
+
+  autoinfra-file-processor:
+
+    build: .
+
+    container_name: autoinfra-file-processor
+
+    volumes:
+      - ./input:/app/input
+      - ./processed:/app/processed
+      - ./backup:/app/backup
+      - ./logs:/app/logs
+
+    env_file:
+      - .env

@@ -1,0 +1,10 @@
+stages:
+  - build
+
+build_job:
+
+  stage: build
+
+  script:
+    - echo "Starting AutoInfra File Processor pipeline"
+    - python --version
