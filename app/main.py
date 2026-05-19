@@ -33,8 +33,19 @@ else:
 
             target_folder.mkdir(parents=True, exist_ok=True)
 
+            backup_folder = Path("backup")
+
+            backup_folder.mkdir(exist_ok=True)
+
+            backup_destination = backup_folder / file.name
+
+            shutil.copy2(str(file), str(backup_destination))
+
+            print(f"Backup created: {backup_destination}")
+
             destination = target_folder / file.name
 
             shutil.move(str(file), str(destination))
 
             print(f"Moved: {file.name} -> {target_folder}")
+            print("------")
